@@ -3,7 +3,7 @@ from turtle import *
 from random import choice, randrange
 from freegames import square, vector
 
-##Definimos los colores al azar que pueden aparecer
+# Escogemos que colores pueden ser para la comida y la serpiente
 
 COLORS = ['blue', 'green', 'pink', 'purple', 'orange']
 
@@ -45,7 +45,7 @@ def move():
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
 
-        # selecciona un color de comida que sea diferente al de la serpiente
+   # Definimos el color de la comida y hacemos que sea diferente al de la serpiente
         global food_color
         while food_color == snake_color:
             food_color = choice(COLORS)
