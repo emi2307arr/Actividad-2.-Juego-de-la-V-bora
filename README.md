@@ -45,7 +45,7 @@ def move():
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
 
-   # Definimos el color de la comida y hacemos que sea diferente al de la serpiente
+    Definimos el color de la comida y hacemos que sea diferente al de la serpiente
         global food_color
         while food_color == snake_color:
             food_color = choice(COLORS)
