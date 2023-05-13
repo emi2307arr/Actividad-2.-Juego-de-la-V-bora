@@ -1,16 +1,16 @@
-from turtle import *
-from random import randrange
-from freegames import square, vector
-
 # resto del código
 from turtle import *
 from random import choice
 from freegames import square, vector
 
+##Definimos los colores al azar que pueden aparecer
+
 COLORS = ['blue', 'green', 'pink', 'purple', 'orange']
 
 food_color = snake_color = choice([c for c in COLORS if c != 'red'])
 
+## Especificamos los vectores de la comida, la serpiente y el movimiento
+ 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
@@ -20,9 +20,13 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
+## Definimos la cabeza de nuestra serpiente
+    
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
+
+## Definimos como se mueve la serpiente
 
 def move():
     "Move snake forward one segment."
@@ -41,7 +45,7 @@ def move():
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
 
-        # Select a new color for the food that is different from the snake's color
+        # selecciona un color de comida que sea diferente al de la serpiente
         global food_color
         while food_color == snake_color:
             food_color = choice(COLORS)
@@ -57,6 +61,8 @@ def move():
     update()
     ontimer(move, 100)
 
+## Ajustamos cómo será nuesto tablero y movimientos.
+    
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
